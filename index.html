@@ -1,455 +1,614 @@
-<!-- ==========================================================================
-script by lbs.
-
-   _,-`````-.
- ,'.         `.
-/  :           :
-l     j ,--.  ,-\   
-\`-  ; l  _j,-\ |
- \ ``  ,``  / |`j
-  `-.'`.    ``r`
-        `=:::::'
-
-=========================================================================== -->
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>CV</title>
-  <meta charset="UTF-8">
-	<style>
-  @font-face {
-    font-family: "C64 Pro Mono";
-    src: local("C64 Pro Mono"), url(C64_Pro_Mono-STYLE.woff) format("woff");
-  }
-	* {
-		color: white;
-		background-color: black;
-		font-family: "C64 Pro Mono";
-    margin: 0;
-    padding: 0;
-	}
-  .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
- }
-  .content {
-    width: 40ch;
-    margin: 2ch auto;
-  }
-  .fg-black { color: black }
-  .fg-white { color: white }
-  .fg-redDark { color: #813338 }
-  .fg-cyan { color: #75CEC8 }
-  .fg-magenta { color: #8E3C97 }
-  .fg-greenDark { color: #56AC4D }
-  .fg-blueDark { color: #2E2C9B }
-  .fg-yellow { color: #EDF171 }
-  .fg-brown { color: #8E5029 }
-  .fg-brownDark { color: #553800 }
-  .fg-red { color: #C46C71 }
-  .fg-grayDark { color: #4A4A4A }
-  .fg-gray { color: #7B7B7B }
-  .fg-green { color: #A9FF9F }
-  .fg-blue { color: #706DEB }
-  .fg-grayLight { color: #B2B2B2 }
-  .bg-black { background-color: black }
-  .bg-white { background-color: white }
-  .bg-redDark { background-color: #813338 }
-  .bg-cyan { background-color: #75CEC8 }
-  .bg-magenta { background-color: #8E3C97 }
-  .bg-greenDark { background-color: #56AC4D }
-  .bg-blueDark { background-color: #2E2C9B }
-  .bg-yellow { background-color: #EDF171 }
-  .bg-brown { background-color: #8E5029 }
-  .bg-brownDark { background-color: #553800 }
-  .bg-red { background-color: #C46C71 }
-  .bg-grayDark { background-color: #4A4A4A }
-  .bg-gray { background-color: #7B7B7B }
-  .bg-green { background-color: #A9FF9F }
-  .bg-blue { background-color: #706DEB }
-  .bg-grayLight { background-color: #B2B2B2 }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-Zone Layout</title>
+    <style>
+        @font-face {
+            font-family: "C64 Pro Mono";
+            src: local("C64 Pro Mono"), url(C64_Pro_Mono-STYLE.woff) format("woff");
+        }
+        * {
+            color: white;
+            background-color: black;
+            font-family: "C64 Pro Mono";
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .title {
+            width: 100%;
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 10px;
+        }
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 100%;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        .sidebar {
+            width: 15%;
+            background-color: #000000;
+            padding: 10px;
+            box-sizing: border-box;
+            min-width: 150px;
+        }
+        .main {
+            width: 60%;
+            background-color: #000000;
+            padding: 20px;
+            box-sizing: border-box;
+            max-width: 60%;
+            text-align: center;
+        }
+        .content {
+            width: 40ch;
+            margin: 2ch auto;
+        }
+        .fg-black { color: black }
+        .fg-white { color: white }
+        .fg-redDark { color: #813338 }
+        .fg-cyan { color: #75CEC8 }
+        .fg-magenta { color: #8E3C97 }
+        .fg-greenDark { color: #56AC4D }
+        .fg-blueDark { color: #2E2C9B }
+        .fg-yellow { color: #EDF171 }
+        .fg-brown { color: #8E5029 }
+        .fg-brownDark { color: #553800 }
+        .fg-red { color: #C46C71 }
+        .fg-grayDark { color: #4A4A4A }
+        .fg-gray { color: #7B7B7B }
+        .fg-green { color: #A9FF9F }
+        .fg-blue { color: #706DEB }
+        .fg-grayLight { color: #B2B2B2 }
+        .bg-black { background-color: black }
+        .bg-white { background-color: white }
+        .bg-redDark { background-color: #813338 }
+        .bg-cyan { background-color: #75CEC8 }
+        .bg-magenta { background-color: #8E3C97 }
+        .bg-greenDark { background-color: #56AC4D }
+        .bg-blueDark { background-color: #2E2C9B }
+        .bg-yellow { background-color: #EDF171 }
+        .bg-brown { background-color: #8E5029 }
+        .bg-brownDark { background-color: #553800 }
+        .bg-red { background-color: #C46C71 }
+        .bg-grayDark { background-color: #4A4A4A }
+        .bg-gray { background-color: #7B7B7B }
+        .bg-green { background-color: #A9FF9F }
+        .bg-blue { background-color: #706DEB }
+        .bg-grayLight { background-color: #B2B2B2 }
+    </style>
 </head>
-
 <body>
-  <div class="content">
-    <pre class="petscii"></pre>
-  
-    <script type="text/javascript">
-      const petsciiCodes = [
-        { code: 32, character: "\ue1a0" },
-        { code: 1, character: "A" },
-        { code: 2, character: "B" },
-        { code: 3, character: "C" },
-        { code: 4, character: "D" },
-        { code: 5, character: "E" },
-        { code: 6, character: "F" },
-        { code: 7, character: "G" },
-        { code: 8, character: "H" },
-        { code: 9, character: "I" },
-        { code: 10, character: "J" },
-        { code: 11, character: "K" },
-        { code: 12, character: "L" },
-        { code: 13, character: "M" },
-        { code: 14, character: "N" },
-        { code: 15, character: "O" },
-        { code: 16, character: "P" },
-        { code: 17, character: "Q" },
-        { code: 18, character: "R" },
-        { code: 19, character: "S" },
-        { code: 20, character: "T" },
-        { code: 21, character: "U" },
-        { code: 22, character: "V" },
-        { code: 23, character: "W" },
-        { code: 24, character: "X" },
-        { code: 25, character: "Y" },
-        { code: 26, character: "Z" },
-        { code: 46, character: "." },
-        { code: 44, character: "," },
-        { code: 59, character: ";" },
-        { code: 33, character: "!" },
-        { code: 63, character: "?" },
-        { code: 48, character: "0" },
-        { code: 49, character: "1" },
-        { code: 50, character: "2" },
-        { code: 51, character: "3" },
-        { code: 52, character: "4" },
-        { code: 53, character: "5" },
-        { code: 54, character: "6" },
-        { code: 55, character: "7" },
-        { code: 56, character: "8" },
-        { code: 57, character: "9" },
-        { code: 34, character: '"' },
-        { code: 35, character: "#" },
-        { code: 36, character: "$" },
-        { code: 37, character: "%" },
-        { code: 38, character: "&" },
-        { code: 39, character: "'" },
-        { code: 112, character: "┌" },
-        { code: 110, character: "┐" },
-        { code: 108, character: "▗" },
-        { code: 123, character: "▖" },
-        { code: 85, character: "╭" },
-        { code: 73, character: "╮" },
-        { code: 79, character: "\ue0cf" },
-        { code: 80, character: "\ue0d0" },
-        { code: 113, character: "┴" },
-        { code: 114, character: "┬" },
-        { code: 40, character: "(" },
-        { code: 41, character: ")" },
-        { code: 60, character: "<" },
-        { code: 62, character: ">" },
-        { code: 78, character: "╱" },
-        { code: 77, character: "╲" },
-        { code: 109, character: "└" },
-        { code: 125, character: "┘" },
-        { code: 124, character: "▝" },
-        { code: 126, character: "▘" },
-        { code: 74, character: "╰" },
-        { code: 75, character: "╯" },
-        { code: 76, character: "\ue06c" },
-        { code: 122, character: "\ue0ba" },
-        { code: 107, character: "├" },
-        { code: 115, character: "┤" },
-        { code: 27, character: "[" },
-        { code: 29, character: "]" },
-        { code: 31, character: "←" },
-        { code: 30, character: "↑" },
-        { code: 95, character: "◥" },
-        { code: 105, character: "◤" },
-        { code: 100, character: "▁" },
-        { code: 111, character: "▂" },
-        { code: 121, character: "▃" },
-        { code: 98, character: "▄" },
-        { code: 120, character: "\ue1b8" },
-        { code: 119, character: "\ue1f7" },
-        { code: 99, character: "▔" },
-        { code: 116, character: "▎" },
-        { code: 101, character: "▎" },
-        { code: 117, character: "▍" },
-        { code: 97, character: "▌" },
-        { code: 118, character: "\ue0f6" },
-        { code: 103, character: "\ue1ea" },
-        { code: 106, character: "\ue1ea" },
-        { code: 91, character: "┼" },
-        { code: 43, character: "+" },
-        { code: 82, character: "\ue072" },
-        { code: 70, character: "\ue0c6" },
-        { code: 64, character: "─" },
-        { code: 45, character: "-" },
-        { code: 67, character: "─" },
-        { code: 68, character: "\ue0c4" },
-        { code: 69, character: "\ue0c5" },
-        { code: 84, character: "\ue074" },
-        { code: 71, character: "\ue067" },
-        { code: 66, character: "|" },
-        { code: 93, character: "|" },
-        { code: 72, character: "\ue068", },
-        { code: 89, character: "\ue0d9", },
-        { code: 47, character: "/" },
-        { code: 86, character: "╳" },
-        { code: 42, character: "*" },
-        { code: 61, character: "=" },
-        { code: 58, character: ":" },
-        { code: 28, character: "£" },
-        { code: 0, character: "@" },
-        { code: 127, character: "▚" },
-        { code: 104, character: "\ue0a8" },
-        { code: 92, character: "\ue17c" },
-        { code: 102, character: "▒" },
-        { code: 81, character: "•" },
-        { code: 87, character: "○" },
-        { code: 65, character: "♠" },
-        { code: 83, character: "♥" },
-        { code: 88, character: "♣" },
-        { code: 90, character: "♦" },
-        { code: 94, character: "π" },
-        { code: 96, character: "\0" },
-        { code: 160, character: "\ue220" },
-        { code: 129, character: "\ue241" },
-        { code: 130, character: "\ue242" },
-        { code: 131, character: "\ue243" },
-        { code: 132, character: "\ue244" },
-        { code: 133, character: "\ue245" },
-        { code: 134, character: "\ue246" },
-        { code: 135, character: "\ue247" },
-        { code: 136, character: "\ue248" },
-        { code: 137, character: "\ue249" },
-        { code: 138, character: "\ue24a" },
-        { code: 139, character: "\ue24b" },
-        { code: 140, character: "\ue24c" },
-        { code: 141, character: "\ue24d" },
-        { code: 142, character: "\ue24e" },
-        { code: 143, character: "\ue24f" },
-        { code: 144, character: "\ue250" },
-        { code: 145, character: "\ue251" },
-        { code: 146, character: "\ue252" },
-        { code: 147, character: "\ue253" },
-        { code: 148, character: "\ue254" },
-        { code: 149, character: "\ue255" },
-        { code: 150, character: "\ue256" },
-        { code: 151, character: "\ue257" },
-        { code: 152, character: "\ue258" },
-        { code: 153, character: "\ue259" },
-        { code: 154, character: "\ue25a" },
-        { code: 174, character: "\ue22e" },
-        { code: 172, character: "\ue22c" },
-        { code: 187, character: "\ue23b" },
-        { code: 161, character: "\ue221" },
-        { code: 191, character: "\ue23f" },
-        { code: 176, character: "\ue230" },
-        { code: 177, character: "\ue231" },
-        { code: 178, character: "\ue232" },
-        { code: 179, character: "\ue233" },
-        { code: 180, character: "\ue234" },
-        { code: 181, character: "\ue235" },
-        { code: 182, character: "\ue236" },
-        { code: 183, character: "\ue237" },
-        { code: 184, character: "\ue238" },
-        { code: 185, character: "\ue239" },
-        { code: 162, character: '\ue222' },
-        { code: 163, character: "\ue223" },
-        { code: 164, character: "\ue224" },
-        { code: 165, character: "\ue225" },
-        { code: 166, character: "\ue226" },
-        { code: 167, character: "\ue227" },
-        { code: 240, character: "\ue2b0" },
-        { code: 238, character: "\ue2ae" },
-        { code: 236, character: "\ue2ac" },
-        { code: 251, character: "\ue2bb" },
-        { code: 213, character: "\ue275" },
-        { code: 201, character: "\ue269" },
-        { code: 207, character: "\ue26f" },
-        { code: 208, character: "\ue270" },
-        { code: 241, character: "\ue2b1" },
-        { code: 242, character: "\ue2b2" },
-        { code: 168, character: "\ue228" },
-        { code: 169, character: "\ue229" },
-        { code: 188, character: "\ue23c" },
-        { code: 190, character: "\ue23e" },
-        { code: 206, character: "\ue2ce" },
-        { code: 205, character: "\ue2cd" },
-        { code: 237, character: "\ue2ad" },
-        { code: 253, character: "\ue2bd" },
-        { code: 252, character: "\ue2bc" },
-        { code: 254, character: "\ue2be" },
-        { code: 202, character: "\ue26a" },
-        { code: 203, character: "\ue26b" },
-        { code: 204, character: "\ue2cc" },
-        { code: 250, character: "\ue2fa" },
-        { code: 235, character: "\ue2ab" },
-        { code: 243, character: "\ue2b3" },
-        { code: 155, character: "\ue25b" },
-        { code: 157, character: "\ue25d" },
-        { code: 159, character: "\ue25f" },
-        { code: 158, character: "\ue25e" },
-        { code: 223, character: "\ue27f" },
-        { code: 233, character: "\ue2a9" },
-        { code: 228, character: "\ue2e4" },
-        { code: 239, character: "\ue2ef" },
-        { code: 249, character: "\ue2f9" },
-        { code: 226, character: "\ue2e2" },
-        { code: 248, character: "▅", },
-        { code: 247, character: "▆", },
-        { code: 227, character: "\ue2e3" },
-        { code: 244, character: "\ue2e5" },
-        { code: 229, character: "\ue2e5" },
-        { code: 245, character: "\ue2b5" },
-        { code: 225, character: "\ue2e1" },
-        { code: 246, character: "▋", },
-        { code: 231, character: "▊", },
-        { code: 234, character: "▊", },
-        { code: 219, character: "\ue2db" },
-        { code: 171, character: "\ue22b" },
-        { code: 210, character: "\ue272" },
-        { code: 198, character: "\ue2c6" },
-        { code: 192, character: "\ue263" },
-        { code: 173, character: "\ue32d" },
-        { code: 195, character: "\ue263" },
-        { code: 196, character: "\ue2c4" },
-        { code: 197, character: "\ue2c5" },
-        { code: 212, character: "\ue274" },
-        { code: 199, character: "\ue2c7" },
-        { code: 194, character: "\ue2dd" },
-        { code: 221, character: "\ue2dd" },
-        { code: 200, character: "\ue2c8" },
-        { code: 217, character: "\ue2d9" },
-        { code: 175, character: "\ue22f" },
-        { code: 214, character: "\ue276" },
-        { code: 170, character: "\ue22a" },
-        { code: 189, character: "\ue23d" },
-        { code: 186, character: "\ue23b" },
-        { code: 156, character: "\ue25c" },
-        { code: 128, character: "\ue240" },
-        { code: 255, character: "\ue2bf" },
-        { code: 232, character: "\ue2a8" },
-        { code: 220, character: "\ue27c" },
-        { code: 230, character: "\ue2e6" },
-        { code: 209, character: "\ue271" },
-        { code: 215, character: "\ue277" },
-        { code: 193, character: "\ue261" },
-        { code: 211, character: "\ue273" },
-        { code: 216, character: "\ue278" },
-        { code: 218, character: "\ue27a" },
-        { code: 222, character: "\ue27e" },
-        { code: 224, character: "\ue220" },
-      ];
-
-      const colourCodes = [
-        { code: 0, colour: "black" },
-        { code: 1, colour: "white" },
-        { code: 2, colour: "redDark" },
-        { code: 3, colour: "cyan" },
-        { code: 4, colour: "magenta" },
-        { code: 5, colour: "greenDark" },
-        { code: 6, colour: "blueDark" },
-        { code: 7, colour: "yellow" },
-        { code: 8, colour: "brown" },
-        { code: 9, colour: "brownDark" },
-        { code: 10, colour: "red" },
-        { code: 11, colour: "grayDark" },
-        { code: 12, colour: "gray" },
-        { code: 13, colour: "green" },
-        { code: 14, colour: "blue" },
-        { code: 15, colour: "grayLight" },
-      ];
+    <div class="title">
+        <pre class="petscii"></pre>
+        <script type="text/javascript">
+            const petsciiCodes = [
+              { code: 32, character: "\ue1a0" },
+              { code: 1, character: "A" },
+              { code: 2, character: "B" },
+              { code: 3, character: "C" },
+              { code: 4, character: "D" },
+              { code: 5, character: "E" },
+              { code: 6, character: "F" },
+              { code: 7, character: "G" },
+              { code: 8, character: "H" },
+              { code: 9, character: "I" },
+              { code: 10, character: "J" },
+              { code: 11, character: "K" },
+              { code: 12, character: "L" },
+              { code: 13, character: "M" },
+              { code: 14, character: "N" },
+              { code: 15, character: "O" },
+              { code: 16, character: "P" },
+              { code: 17, character: "Q" },
+              { code: 18, character: "R" },
+              { code: 19, character: "S" },
+              { code: 20, character: "T" },
+              { code: 21, character: "U" },
+              { code: 22, character: "V" },
+              { code: 23, character: "W" },
+              { code: 24, character: "X" },
+              { code: 25, character: "Y" },
+              { code: 26, character: "Z" },
+              { code: 46, character: "." },
+              { code: 44, character: "," },
+              { code: 59, character: ";" },
+              { code: 33, character: "!" },
+              { code: 63, character: "?" },
+              { code: 48, character: "0" },
+              { code: 49, character: "1" },
+              { code: 50, character: "2" },
+              { code: 51, character: "3" },
+              { code: 52, character: "4" },
+              { code: 53, character: "5" },
+              { code: 54, character: "6" },
+              { code: 55, character: "7" },
+              { code: 56, character: "8" },
+              { code: 57, character: "9" },
+              { code: 34, character: '"' },
+              { code: 35, character: "#" },
+              { code: 36, character: "$" },
+              { code: 37, character: "%" },
+              { code: 38, character: "&" },
+              { code: 39, character: "'" },
+              { code: 112, character: "┌" },
+              { code: 110, character: "┐" },
+              { code: 108, character: "▗" },
+              { code: 123, character: "▖" },
+              { code: 85, character: "╭" },
+              { code: 73, character: "╮" },
+              { code: 79, character: "\ue0cf" },
+              { code: 80, character: "\ue0d0" },
+              { code: 113, character: "┴" },
+              { code: 114, character: "┬" },
+              { code: 40, character: "(" },
+              { code: 41, character: ")" },
+              { code: 60, character: "<" },
+              { code: 62, character: ">" },
+              { code: 78, character: "╱" },
+              { code: 77, character: "╲" },
+              { code: 109, character: "└" },
+              { code: 125, character: "┘" },
+              { code: 124, character: "▝" },
+              { code: 126, character: "▘" },
+              { code: 74, character: "╰" },
+              { code: 75, character: "╯" },
+              { code: 76, character: "\ue06c" },
+              { code: 122, character: "\ue0ba" },
+              { code: 107, character: "├" },
+              { code: 115, character: "┤" },
+              { code: 27, character: "[" },
+              { code: 29, character: "]" },
+              { code: 31, character: "←" },
+              { code: 30, character: "↑" },
+              { code: 95, character: "◥" },
+              { code: 105, character: "◤" },
+              { code: 100, character: "▁" },
+              { code: 111, character: "▂" },
+              { code: 121, character: "▃" },
+              { code: 98, character: "▄" },
+              { code: 120, character: "\ue1b8" },
+              { code: 119, character: "\ue1f7" },
+              { code: 99, character: "▔" },
+              { code: 116, character: "▎" },
+              { code: 101, character: "▎" },
+              { code: 117, character: "▍" },
+              { code: 97, character: "▌" },
+              { code: 118, character: "\ue0f6" },
+              { code: 103, character: "\ue1ea" },
+              { code: 106, character: "\ue1ea" },
+              { code: 91, character: "┼" },
+              { code: 43, character: "+" },
+              { code: 82, character: "\ue072" },
+              { code: 70, character: "\ue0c6" },
+              { code: 64, character: "─" },
+              { code: 45, character: "-" },
+              { code: 67, character: "─" },
+              { code: 68, character: "\ue0c4" },
+              { code: 69, character: "\ue0c5" },
+              { code: 84, character: "\ue074" },
+              { code: 71, character: "\ue067" },
+              { code: 66, character: "|" },
+              { code: 93, character: "|" },
+              { code: 72, character: "\ue068", },
+              { code: 89, character: "\ue0d9", },
+              { code: 47, character: "/" },
+              { code: 86, character: "╳" },
+              { code: 42, character: "*" },
+              { code: 61, character: "=" },
+              { code: 58, character: ":" },
+              { code: 28, character: "£" },
+              { code: 0, character: "@" },
+              { code: 127, character: "▚" },
+              { code: 104, character: "\ue0a8" },
+              { code: 92, character: "\ue17c" },
+              { code: 102, character: "▒" },
+              { code: 81, character: "•" },
+              { code: 87, character: "○" },
+              { code: 65, character: "♠" },
+              { code: 83, character: "♥" },
+              { code: 88, character: "♣" },
+              { code: 90, character: "♦" },
+              { code: 94, character: "π" },
+              { code: 96, character: "\0" },
+              { code: 160, character: "\ue220" },
+              { code: 129, character: "\ue241" },
+              { code: 130, character: "\ue242" },
+              { code: 131, character: "\ue243" },
+              { code: 132, character: "\ue244" },
+              { code: 133, character: "\ue245" },
+              { code: 134, character: "\ue246" },
+              { code: 135, character: "\ue247" },
+              { code: 136, character: "\ue248" },
+              { code: 137, character: "\ue249" },
+              { code: 138, character: "\ue24a" },
+              { code: 139, character: "\ue24b" },
+              { code: 140, character: "\ue24c" },
+              { code: 141, character: "\ue24d" },
+              { code: 142, character: "\ue24e" },
+              { code: 143, character: "\ue24f" },
+              { code: 144, character: "\ue250" },
+              { code: 145, character: "\ue251" },
+              { code: 146, character: "\ue252" },
+              { code: 147, character: "\ue253" },
+              { code: 148, character: "\ue254" },
+              { code: 149, character: "\ue255" },
+              { code: 150, character: "\ue256" },
+              { code: 151, character: "\ue257" },
+              { code: 152, character: "\ue258" },
+              { code: 153, character: "\ue259" },
+              { code: 154, character: "\ue25a" },
+              { code: 174, character: "\ue22e" },
+              { code: 172, character: "\ue22c" },
+              { code: 187, character: "\ue23b" },
+              { code: 161, character: "\ue221" },
+              { code: 191, character: "\ue23f" },
+              { code: 176, character: "\ue230" },
+              { code: 177, character: "\ue231" },
+              { code: 178, character: "\ue232" },
+              { code: 179, character: "\ue233" },
+              { code: 180, character: "\ue234" },
+              { code: 181, character: "\ue235" },
+              { code: 182, character: "\ue236" },
+              { code: 183, character: "\ue237" },
+              { code: 184, character: "\ue238" },
+              { code: 185, character: "\ue239" },
+              { code: 162, character: '\ue222' },
+              { code: 163, character: "\ue223" },
+              { code: 164, character: "\ue224" },
+              { code: 165, character: "\ue225" },
+              { code: 166, character: "\ue226" },
+              { code: 167, character: "\ue227" },
+              { code: 240, character: "\ue2b0" },
+              { code: 238, character: "\ue2ae" },
+              { code: 236, character: "\ue2ac" },
+              { code: 251, character: "\ue2bb" },
+              { code: 213, character: "\ue275" },
+              { code: 201, character: "\ue269" },
+              { code: 207, character: "\ue26f" },
+              { code: 208, character: "\ue270" },
+              { code: 241, character: "\ue2b1" },
+              { code: 242, character: "\ue2b2" },
+              { code: 168, character: "\ue228" },
+              { code: 169, character: "\ue229" },
+              { code: 188, character: "\ue23c" },
+              { code: 190, character: "\ue23e" },
+              { code: 206, character: "\ue2ce" },
+              { code: 205, character: "\ue2cd" },
+              { code: 237, character: "\ue2ad" },
+              { code: 253, character: "\ue2bd" },
+              { code: 252, character: "\ue2bc" },
+              { code: 254, character: "\ue2be" },
+              { code: 202, character: "\ue26a" },
+              { code: 203, character: "\ue26b" },
+              { code: 204, character: "\ue2cc" },
+              { code: 250, character: "\ue2fa" },
+              { code: 235, character: "\ue2ab" },
+              { code: 243, character: "\ue2b3" },
+              { code: 155, character: "\ue25b" },
+              { code: 157, character: "\ue25d" },
+              { code: 159, character: "\ue25f" },
+              { code: 158, character: "\ue25e" },
+              { code: 223, character: "\ue27f" },
+              { code: 233, character: "\ue2a9" },
+              { code: 228, character: "\ue2e4" },
+              { code: 239, character: "\ue2ef" },
+              { code: 249, character: "\ue2f9" },
+              { code: 226, character: "\ue2e2" },
+              { code: 248, character: "▅", },
+              { code: 247, character: "▆", },
+              { code: 227, character: "\ue2e3" },
+              { code: 244, character: "\ue2e5" },
+              { code: 229, character: "\ue2e5" },
+              { code: 245, character: "\ue2b5" },
+              { code: 225, character: "\ue2e1" },
+              { code: 246, character: "▋", },
+              { code: 231, character: "▊", },
+              { code: 234, character: "▊", },
+              { code: 219, character: "\ue2db" },
+              { code: 171, character: "\ue22b" },
+              { code: 210, character: "\ue272" },
+              { code: 198, character: "\ue2c6" },
+              { code: 192, character: "\ue263" },
+              { code: 173, character: "\ue32d" },
+              { code: 195, character: "\ue263" },
+              { code: 196, character: "\ue2c4" },
+              { code: 197, character: "\ue2c5" },
+              { code: 212, character: "\ue274" },
+              { code: 199, character: "\ue2c7" },
+              { code: 194, character: "\ue2dd" },
+              { code: 221, character: "\ue2dd" },
+              { code: 200, character: "\ue2c8" },
+              { code: 217, character: "\ue2d9" },
+              { code: 175, character: "\ue22f" },
+              { code: 214, character: "\ue276" },
+              { code: 170, character: "\ue22a" },
+              { code: 189, character: "\ue23d" },
+              { code: 186, character: "\ue23b" },
+              { code: 156, character: "\ue25c" },
+              { code: 128, character: "\ue240" },
+              { code: 255, character: "\ue2bf" },
+              { code: 232, character: "\ue2a8" },
+              { code: 220, character: "\ue27c" },
+              { code: 230, character: "\ue2e6" },
+              { code: 209, character: "\ue271" },
+              { code: 215, character: "\ue277" },
+              { code: 193, character: "\ue261" },
+              { code: 211, character: "\ue273" },
+              { code: 216, character: "\ue278" },
+              { code: 218, character: "\ue27a" },
+              { code: 222, character: "\ue27e" },
+              { code: 224, character: "\ue220" },
+            ];
       
-      const loadPetsciiTitle = () => {
-        // parses Petmate json files
-
-        // paste your json here
-        var json = {"version":1,"framebufs":[{"width":40,"height":25,"backgroundColor":0,"borderColor":1,"charset":"upper","name":"screen_002","screencodes":[32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,100,121,111,32,32,32,111,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,233,119,32,39,120,77,254,209,101,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,35,32,32,32,32,233,126,99,32,32,32,108,73,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,111,100,95,100,100,100,100,246,32,32,32,32,108,117,117,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,108,105,99,119,12,119,119,32,245,75,32,32,32,32,254,78,81,32,121,98,32,100,32,123,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,100,236,32,32,32,72,32,32,103,246,103,97,118,117,118,105,32,246,118,126,118,32,235,77,97,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,245,39,32,32,32,50,32,32,245,214,254,32,203,32,229,32,245,75,245,208,75,245,126,254,75,44,32,32,32,32,32,32,32,32,32,32,32,32,32,32,231,32,32,78,80,79,69,80,236,80,97,118,97,108,97,100,231,32,231,32,108,246,118,117,85,75,32,32,32,32,32,32,32,32,32,32,32,32,32,103,246,32,89,100,78,32,32,229,75,74,252,47,69,119,252,105,77,47,83,70,204,75,118,114,126,32,32,32,32,32,32,32,32,32,32,32,32,32,32,39,231,32,39,119,100,100,233,105,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,229,100,248,226,119,80,236,127,78,73,44,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,118,186,92,32,111,236,144,79,246,74,75,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,108,236,99,120,226,119,108,105,32,231,32,32,32,32,32,32,32,32,32,32,32,208,32,32,32,32,32,32,32,32,203,32,32,32,32,32,118,117,32,32,203,75,32,32,32,32,97,32,103,246,32,32,32,32,32,32,32,32,32,32,118,117,81,32,32,32,32,32,32,118,97,32,81,32,32,32,203,32,32,118,97,32,32,81,32,225,117,32,255,75,207,121,32,108,116,108,117,32,248,77,231,32,208,32,248,81,32,207,114,203,32,207,32,108,247,144,117,32,32,229,32,32,32,62,32,107,64,205,75,233,232,103,101,203,32,229,75,207,126,245,101,118,117,207,126,118,233,79,225,97,103,246,46,236,58,231,32,32,32,231,32,32,52,32,245,101,32,118,101,231,32,225,225,117,103,97,103,246,32,231,32,203,32,228,175,75,231,32,203,32,245,75,245,101,118,117,108,32,32,231,32,85,75,100,236,32,32,225,184,97,46,97,229,32,254,75,254,117,207,117,233,117,254,117,32,233,97,233,97,108,246,100,186,32,203,32,47,32,32,124,91,75,32,245,126,32,46,189,32,250,120,32,95,120,80,47,119,120,120,154,186,47,39,226,226,119,250,119,95,75,105,47,226,249,226,78,32,32,32,32,44,32,233,105,32,100,203,126,32,32,32,32,32,32,32,32,32,32,85,32,117,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,77,98,213,121,248,249,75,32,32,32,32,32,32,32,32,32,32,32,252,16,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,99,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32],"colors":[6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,6,6,6,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,6,6,6,6,1,1,1,6,6,6,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,6,6,6,6,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,6,1,1,1,6,1,6,1,1,1,1,1,1,6,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,6,6,1,6,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,6,6,1,6,6,1,1,1,6,1,6,1,6,1,1,1,1,1,1,1,1,1,11,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,1,1,1,6,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,1,1,11,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,6,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,6,1,6,6,6,6,6,6,6,6,6,6,6,1,6,1,6,6,6,6,6,6,1,6,1,6,6,6,1,1,6,6,1,1,6,6,6,6,1,6,1,1,6,6,6,6,6,6,6,6,6,6,1,1,1,1,6,6,6,6,6,1,1,1,1,6,6,6,1,6,6,1,1,6,6,1,6,1,1,6,1,1,1,1,6,1,1,1,1,6,1,1,1,6,1,6,1,1,6,1,1,1,6,1,6,1,1,1,1,6,6,1,1,6,6,1,6,1,1,1,1,1,1,1,1,1,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,11,1,6,6,6,1,6,6,1,6,1,1,6,1,1,1,6,1,1,1,1,1,1,1,6,1,6,1,1,1,1,1,1,6,1,6,1,1,1,1,1,1,1,6,6,1,6,1,1,1,1,6,6,1,1,1,1,1,1,6,1,1,1,1,1,1,1,1,1,1,6,1,1,1,1,1,1,1,1,6,1,6,1,6,6,1,1,1,6,1,1,6,1,1,1,1,1,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,15,1,1,1,1,1,1,1,1,6,6,6,6,11,6,1,1,6,1,1,1,6,6,6,6,6,6,6,6,6,6,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,11,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6]}],"charsets":{}};
-        var width =  json.framebufs[0].width;
-        var characters = json.framebufs[0].screencodes;
-        var colours = json.framebufs[0].colors;
-        var bgColour = colourCodes.find((el) => el.code == json.framebufs[0].backgroundColor).colour;
-
-        // converting character and colour codes into meaningful data
-        var row = [];
-        var grid = [];
-        for (let i = 0; i < characters.length; i++) {
-          var j = i;
-          var ch = {
-            character: petsciiCodes.find((el) => el.code == characters[j]).character,
-            colour: colourCodes.find((el) => el.code == colours[j]).colour,
-          };
-          row.push(ch);
-          if ((i + 1) % width == 0) {
-            grid.push(row);
-            row = [];
-          }
-        }
-
-        // this is where actual characters are put on the screen
-        var element = document.getElementsByClassName("petscii")[0];
-        for (var i = 0; i < grid.length; i++) {
-          for (var j = 0; j < grid[i].length; j++) {
-            element.innerHTML += `<span class="fg-${grid[i][j].colour} bg-${bgColour}">${grid[i][j].character}</span>`;
-          }
-          element.innerHTML += `<br>`;
-        }
-      }
+            const colourCodes = [
+              { code: 0, colour: "black" },
+              { code: 1, colour: "white" },
+              { code: 2, colour: "redDark" },
+              { code: 3, colour: "cyan" },
+              { code: 4, colour: "magenta" },
+              { code: 5, colour: "greenDark" },
+              { code: 6, colour: "blueDark" },
+              { code: 7, colour: "yellow" },
+              { code: 8, colour: "brown" },
+              { code: 9, colour: "brownDark" },
+              { code: 10, colour: "red" },
+              { code: 11, colour: "grayDark" },
+              { code: 12, colour: "gray" },
+              { code: 13, colour: "green" },
+              { code: 14, colour: "blue" },
+              { code: 15, colour: "grayLight" },
+            ];
+            
+            const loadPetsciiTitle = () => {
+              // parses Petmate json files
       
-
-      //loadPetsciiTitle();
-
-      const loadPetsciiArt = () => {
-        // parses Petmate json files
-
-        // paste your json here
-        var json = {"version":1,"framebufs":[{"width":40,"height":25,"backgroundColor":0,"borderColor":1,"charset":"upper","name":"screen_002","screencodes":[32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,100,121,111,32,32,32,111,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,233,119,32,39,120,77,254,209,101,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,35,32,32,32,32,233,126,99,32,32,32,108,73,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,111,100,95,100,100,100,100,246,32,32,32,32,108,117,117,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,108,105,99,119,12,119,119,32,245,75,32,32,32,32,254,78,81,32,121,98,32,100,32,123,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,100,236,32,32,32,72,32,32,103,246,103,97,118,117,118,105,32,246,118,126,118,32,235,77,97,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,245,39,32,32,32,50,32,32,245,214,254,32,203,32,229,32,245,75,245,208,75,245,126,254,75,44,32,32,32,32,32,32,32,32,32,32,32,32,32,32,231,32,32,78,80,79,69,80,236,80,97,118,97,108,97,100,231,32,231,32,108,246,118,117,85,75,32,32,32,32,32,32,32,32,32,32,32,32,32,103,246,32,89,100,78,32,32,229,75,74,252,47,69,119,252,105,77,47,83,70,204,75,118,114,126,32,32,32,32,32,32,32,32,32,32,32,32,32,32,39,231,32,39,119,100,100,233,105,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,229,100,248,226,119,80,236,127,78,73,44,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,118,186,92,32,111,236,144,79,246,74,75,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,108,236,99,120,226,119,108,105,32,231,32,32,32,32,32,32,32,32,32,32,32,208,32,32,32,32,32,32,32,32,203,32,32,32,32,32,118,117,32,32,203,75,32,32,32,32,97,32,103,246,32,32,32,32,32,32,32,32,32,32,118,117,81,32,32,32,32,32,32,118,97,32,81,32,32,32,203,32,32,118,97,32,32,81,32,225,117,32,255,75,207,121,32,108,116,108,117,32,248,77,231,32,208,32,248,81,32,207,114,203,32,207,32,108,247,144,117,32,32,229,32,32,32,62,32,107,64,205,75,233,232,103,101,203,32,229,75,207,126,245,101,118,117,207,126,118,233,79,225,97,103,246,46,236,58,231,32,32,32,231,32,32,52,32,245,101,32,118,101,231,32,225,225,117,103,97,103,246,32,231,32,203,32,228,175,75,231,32,203,32,245,75,245,101,118,117,108,32,32,231,32,85,75,100,236,32,32,225,184,97,46,97,229,32,254,75,254,117,207,117,233,117,254,117,32,233,97,233,97,108,246,100,186,32,203,32,47,32,32,124,91,75,32,245,126,32,46,189,32,250,120,32,95,120,80,47,119,120,120,154,186,47,39,226,226,119,250,119,95,75,105,47,226,249,226,78,32,32,32,32,44,32,233,105,32,100,203,126,32,32,32,32,32,32,32,32,32,32,85,32,117,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,77,98,213,121,248,249,75,32,32,32,32,32,32,32,32,32,32,32,252,16,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,99,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32],"colors":[6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,6,6,6,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,6,6,6,6,1,1,1,6,6,6,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,6,6,6,6,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,6,1,1,1,6,1,6,1,1,1,1,1,1,6,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,6,6,1,6,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,6,6,1,6,6,1,1,1,6,1,6,1,6,1,1,1,1,1,1,1,1,1,11,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,1,1,1,6,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,1,1,11,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,6,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,6,1,6,6,6,6,6,6,6,6,6,6,6,1,6,1,6,6,6,6,6,6,1,6,1,6,6,6,1,1,6,6,1,1,6,6,6,6,1,6,1,1,6,6,6,6,6,6,6,6,6,6,1,1,1,1,6,6,6,6,6,1,1,1,1,6,6,6,1,6,6,1,1,6,6,1,6,1,1,6,1,1,1,1,6,1,1,1,1,6,1,1,1,6,1,6,1,1,6,1,1,1,6,1,6,1,1,1,1,6,6,1,1,6,6,1,6,1,1,1,1,1,1,1,1,1,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,11,1,6,6,6,1,6,6,1,6,1,1,6,1,1,1,6,1,1,1,1,1,1,1,6,1,6,1,1,1,1,1,1,6,1,6,1,1,1,1,1,1,1,6,6,1,6,1,1,1,1,6,6,1,1,1,1,1,1,6,1,1,1,1,1,1,1,1,1,1,6,1,1,1,1,1,1,1,1,6,1,6,1,6,6,1,1,1,6,1,1,6,1,1,1,1,1,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,15,1,1,1,1,1,1,1,1,6,6,6,6,11,6,1,1,6,1,1,1,6,6,6,6,6,6,6,6,6,6,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,11,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6]}],"charsets":{}};
-        var width =  json.framebufs[0].width;
-        var characters = json.framebufs[0].screencodes;
-        var colours = json.framebufs[0].colors;
-        var bgColour = colourCodes.find((el) => el.code == json.framebufs[0].backgroundColor).colour;
-
-        // converting character and colour codes into meaningful data
-        var row = [];
-        var grid = [];
-        for (let i = 0; i < characters.length; i++) {
-          var j = i;
-          var ch = {
-            character: petsciiCodes.find((el) => el.code == characters[j]).character,
-            colour: colourCodes.find((el) => el.code == colours[j]).colour,
-          };
-          row.push(ch);
-          if ((i + 1) % width == 0) {
-            grid.push(row);
-            row = [];
-          }
-        }
-        // this is where actual characters are put on the screen
-        var element = document.getElementsByClassName("petscii")[0];
-        for (var i = 0; i < grid.length; i++) {
-          for (var j = 0; j < grid[i].length; j++) {
-            element.innerHTML += `<span class="fg-${grid[i][j].colour} bg-${bgColour}">${grid[i][j].character}</span>`;
-          }
-          element.innerHTML += `<br>`;
-        }
-      }
-      loadPetsciiArt();
-    
-    </script>
-    <a class="fg-magenta" href="mailto:pro.j.boudjedid@gmail.com"> mail</a>.   |   .<a class="fg-magenta" href="https://www.linkedin.com/in/julienboudjedid/"> linkedin </a>.   |   .<a class="fg-magenta"> +33787131177 </a> 
-  <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
-  padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
-  border-radius: 8px; will-change: transform;">
-   <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-     src="https://www.canva.com/design/DAGjZtZkVJQ/bK6-fuh2z5qNxwfODe9ybw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-   </iframe>
- </div>
- <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGjZtZkVJQ&#x2F;bK6-fuh2z5qNxwfODe9ybw&#x2F;view?utm_content=DAGjZtZkVJQ&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">CV</a> by Julien Boudjedid
-    
-  <br /><br />
-  </div>
-  <!-- I want to center the footer-->
-  <div class="footer">
-  
-  <br /><br />
-  <br /><br />
-  <br /><br />
-  <a class="fg-magenta" href="mailto:pro.j.boudjedid@gmail.com"> mail</a>.   |   .<a class="fg-magenta" href="https://www.linkedin.com/in/julienboudjedid/"> linkedin </a>.   |   .<a class="fg-magenta"> +33787131177 </a> 
-  </div>
+              // paste your json here
+              var json = {"version":1,"framebufs":[{"width":40,"height":25,"backgroundColor":0,"borderColor":1,"charset":"upper","name":"screen_002","screencodes":[32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,100,121,111,32,32,32,111,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,233,119,32,39,120,77,254,209,101,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,35,32,32,32,32,233,126,99,32,32,32,108,73,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,111,100,95,100,100,100,100,246,32,32,32,32,108,117,117,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,108,105,99,119,12,119,119,32,245,75,32,32,32,32,254,78,81,32,121,98,32,100,32,123,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,100,236,32,32,32,72,32,32,103,246,103,97,118,117,118,105,32,246,118,126,118,32,235,77,97,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,245,39,32,32,32,50,32,32,245,214,254,32,203,32,229,32,245,75,245,208,75,245,126,254,75,44,32,32,32,32,32,32,32,32,32,32,32,32,32,32,231,32,32,78,80,79,69,80,236,80,97,118,97,108,97,100,231,32,231,32,108,246,118,117,85,75,32,32,32,32,32,32,32,32,32,32,32,32,32,103,246,32,89,100,78,32,32,229,75,74,252,47,69,119,252,105,77,47,83,70,204,75,118,114,126,32,32,32,32,32,32,32,32,32,32,32,32,32,32,39,231,32,39,119,100,100,233,105,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,229,100,248,226,119,80,236,127,78,73,44,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,118,186,92,32,111,236,144,79,246,74,75,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,108,236,99,120,226,119,108,105,32,231,32,32,32,32,32,32,32,32,32,32,32,208,32,32,32,32,32,32,32,32,203,32,32,32,32,32,118,117,32,32,203,75,32,32,32,32,97,32,103,246,32,32,32,32,32,32,32,32,32,32,118,117,81,32,32,32,32,32,32,118,97,32,81,32,32,32,203,32,32,118,97,32,32,81,32,225,117,32,255,75,207,121,32,108,116,108,117,32,248,77,231,32,208,32,248,81,32,207,114,203,32,207,32,108,247,144,117,32,32,229,32,32,32,62,32,107,64,205,75,233,232,103,101,203,32,229,75,207,126,245,101,118,117,207,126,118,233,79,225,97,103,246,46,236,58,231,32,32,32,231,32,32,52,32,245,101,32,118,101,231,32,225,225,117,103,97,103,246,32,231,32,203,32,228,175,75,231,32,203,32,245,75,245,101,118,117,108,32,32,231,32,85,75,100,236,32,32,225,184,97,46,97,229,32,254,75,254,117,207,117,233,117,254,117,32,233,97,233,97,108,246,100,186,32,203,32,47,32,32,124,91,75,32,245,126,32,46,189,32,250,120,32,95,120,80,47,119,120,120,154,186,47,39,226,226,119,250,119,95,75,105,47,226,249,226,78,32,32,32,32,44,32,233,105,32,100,203,126,32,32,32,32,32,32,32,32,32,32,85,32,117,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,77,98,213,121,248,249,75,32,32,32,32,32,32,32,32,32,32,32,252,16,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,99,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32],"colors":[6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,6,6,6,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,6,6,6,6,1,1,1,6,6,6,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,6,6,6,6,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,6,1,1,1,6,1,6,1,1,1,1,1,1,6,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,6,6,1,6,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,6,6,1,6,6,1,1,1,6,1,6,1,6,1,1,1,1,1,1,1,1,1,11,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,1,1,1,6,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,1,1,11,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,6,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,6,1,6,6,6,6,6,6,6,6,6,6,6,1,6,1,6,6,6,6,6,6,1,6,1,6,6,6,1,1,6,6,1,1,6,6,6,6,1,6,1,1,6,6,6,6,6,6,6,6,6,6,1,1,1,1,6,6,6,6,6,1,1,1,1,6,6,6,1,6,6,1,1,6,6,1,6,1,1,6,1,1,1,1,6,1,1,1,1,6,1,1,1,6,1,6,1,1,6,1,1,1,6,1,6,1,1,1,1,6,6,1,1,6,6,1,6,1,1,1,1,1,1,1,1,1,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,11,1,6,6,6,1,6,6,1,6,1,1,6,1,1,1,6,1,1,1,1,1,1,1,6,1,6,1,1,1,1,1,1,6,1,6,1,1,1,1,1,1,1,6,6,1,6,1,1,1,1,6,6,1,1,1,1,1,1,6,1,1,1,1,1,1,1,1,1,1,6,1,1,1,1,1,1,1,1,6,1,6,1,6,6,1,1,1,6,1,1,6,1,1,1,1,1,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,15,1,1,1,1,1,1,1,1,6,6,6,6,11,6,1,1,6,1,1,1,6,6,6,6,6,6,6,6,6,6,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,11,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6]}],"charsets":{}};
+              var width =  json.framebufs[0].width;
+              var characters = json.framebufs[0].screencodes;
+              var colours = json.framebufs[0].colors;
+              var bgColour = colourCodes.find((el) => el.code == json.framebufs[0].backgroundColor).colour;
+      
+              // converting character and colour codes into meaningful data
+              var row = [];
+              var grid = [];
+              for (let i = 0; i < characters.length; i++) {
+                var j = i;
+                var ch = {
+                  character: petsciiCodes.find((el) => el.code == characters[j]).character,
+                  colour: colourCodes.find((el) => el.code == colours[j]).colour,
+                };
+                row.push(ch);
+                if ((i + 1) % width == 0) {
+                  grid.push(row);
+                  row = [];
+                }
+              }
+      
+              // this is where actual characters are put on the screen
+              var element = document.getElementsByClassName("petscii")[0];
+              for (var i = 0; i < grid.length; i++) {
+                for (var j = 0; j < grid[i].length; j++) {
+                  element.innerHTML += `<span class="fg-${grid[i][j].colour} bg-${bgColour}">${grid[i][j].character}</span>`;
+                }
+                element.innerHTML += `<br>`;
+              }
+            }
+            
+      
+            //loadPetsciiTitle();
+      
+            const loadPetsciiArt = () => {
+              // parses Petmate json files
+      
+              // paste your json here
+              var json = {"version":1,"framebufs":[{"width":40,"height":25,"backgroundColor":0,"borderColor":1,"charset":"upper","name":"screen_002","screencodes":[32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,100,121,111,32,32,32,111,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,233,119,32,39,120,77,254,209,101,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,35,32,32,32,32,233,126,99,32,32,32,108,73,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,111,100,95,100,100,100,100,246,32,32,32,32,108,117,117,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,108,105,99,119,12,119,119,32,245,75,32,32,32,32,254,78,81,32,121,98,32,100,32,123,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,100,236,32,32,32,72,32,32,103,246,103,97,118,117,118,105,32,246,118,126,118,32,235,77,97,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,245,39,32,32,32,50,32,32,245,214,254,32,203,32,229,32,245,75,245,208,75,245,126,254,75,44,32,32,32,32,32,32,32,32,32,32,32,32,32,32,231,32,32,78,80,79,69,80,236,80,97,118,97,108,97,100,231,32,231,32,108,246,118,117,85,75,32,32,32,32,32,32,32,32,32,32,32,32,32,103,246,32,89,100,78,32,32,229,75,74,252,47,69,119,252,105,77,47,83,70,204,75,118,114,126,32,32,32,32,32,32,32,32,32,32,32,32,32,32,39,231,32,39,119,100,100,233,105,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,229,100,248,226,119,80,236,127,78,73,44,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,118,186,92,32,111,236,144,79,246,74,75,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,108,236,99,120,226,119,108,105,32,231,32,32,32,32,32,32,32,32,32,32,32,208,32,32,32,32,32,32,32,32,203,32,32,32,32,32,118,117,32,32,203,75,32,32,32,32,97,32,103,246,32,32,32,32,32,32,32,32,32,32,118,117,81,32,32,32,32,32,32,118,97,32,81,32,32,32,203,32,32,118,97,32,32,81,32,225,117,32,255,75,207,121,32,108,116,108,117,32,248,77,231,32,208,32,248,81,32,207,114,203,32,207,32,108,247,144,117,32,32,229,32,32,32,62,32,107,64,205,75,233,232,103,101,203,32,229,75,207,126,245,101,118,117,207,126,118,233,79,225,97,103,246,46,236,58,231,32,32,32,231,32,32,52,32,245,101,32,118,101,231,32,225,225,117,103,97,103,246,32,231,32,203,32,228,175,75,231,32,203,32,245,75,245,101,118,117,108,32,32,231,32,85,75,100,236,32,32,225,184,97,46,97,229,32,254,75,254,117,207,117,233,117,254,117,32,233,97,233,97,108,246,100,186,32,203,32,47,32,32,124,91,75,32,245,126,32,46,189,32,250,120,32,95,120,80,47,119,120,120,154,186,47,39,226,226,119,250,119,95,75,105,47,226,249,226,78,32,32,32,32,44,32,233,105,32,100,203,126,32,32,32,32,32,32,32,32,32,32,85,32,117,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,77,98,213,121,248,249,75,32,32,32,32,32,32,32,32,32,32,32,252,16,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,99,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32,32],"colors":[6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,6,6,6,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,6,6,6,6,1,1,1,6,6,6,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,6,6,6,6,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,6,1,1,1,6,1,6,1,1,1,1,1,1,6,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,6,6,1,6,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,6,6,1,6,6,1,1,1,6,1,6,1,6,1,1,1,1,1,1,1,1,1,11,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,1,1,1,6,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,6,1,1,11,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,6,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,1,6,1,6,6,6,6,6,6,6,6,6,6,6,1,6,1,6,6,6,6,6,6,1,6,1,6,6,6,1,1,6,6,1,1,6,6,6,6,1,6,1,1,6,6,6,6,6,6,6,6,6,6,1,1,1,1,6,6,6,6,6,1,1,1,1,6,6,6,1,6,6,1,1,6,6,1,6,1,1,6,1,1,1,1,6,1,1,1,1,6,1,1,1,6,1,6,1,1,6,1,1,1,6,1,6,1,1,1,1,6,6,1,1,6,6,1,6,1,1,1,1,1,1,1,1,1,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,11,1,6,6,6,1,6,6,1,6,1,1,6,1,1,1,6,1,1,1,1,1,1,1,6,1,6,1,1,1,1,1,1,6,1,6,1,1,1,1,1,1,1,6,6,1,6,1,1,1,1,6,6,1,1,1,1,1,1,6,1,1,1,1,1,1,1,1,1,1,6,1,1,1,1,1,1,1,1,6,1,6,1,6,6,1,1,1,6,1,1,6,1,1,1,1,1,6,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,15,1,1,1,1,1,1,1,1,6,6,6,6,11,6,1,1,6,1,1,1,6,6,6,6,6,6,6,6,6,6,1,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,1,1,1,1,1,1,1,6,6,6,6,6,6,6,6,6,6,6,1,1,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,11,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6]}],"charsets":{}};
+              var width =  json.framebufs[0].width;
+              var characters = json.framebufs[0].screencodes;
+              var colours = json.framebufs[0].colors;
+              var bgColour = colourCodes.find((el) => el.code == json.framebufs[0].backgroundColor).colour;
+      
+              // converting character and colour codes into meaningful data
+              var row = [];
+              var grid = [];
+              for (let i = 0; i < characters.length; i++) {
+                var j = i;
+                var ch = {
+                  character: petsciiCodes.find((el) => el.code == characters[j]).character,
+                  colour: colourCodes.find((el) => el.code == colours[j]).colour,
+                };
+                row.push(ch);
+                if ((i + 1) % width == 0) {
+                  grid.push(row);
+                  row = [];
+                }
+              }
+              // this is where actual characters are put on the screen
+              var element = document.getElementsByClassName("petscii")[0];
+              for (var i = 0; i < grid.length; i++) {
+                for (var j = 0; j < grid[i].length; j++) {
+                  element.innerHTML += `<span class="fg-${grid[i][j].colour} bg-${bgColour}">${grid[i][j].character}</span>`;
+                }
+                element.innerHTML += `<br>`;
+              }
+            }
+            loadPetsciiArt();
+          
+          </script>
+</div>
+    <div class="container">
+        <div class="sidebar">
+            __________
+            \"-_|``\\/
+            .\-_|``\/
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            555555555
+                </div>
+        <div class="main">
+            <a class="fg-magenta" href="mailto:pro.j.boudjedid@gmail.com"> mail</a>.   |   .<a class="fg-magenta" href="https://www.linkedin.com/in/julienboudjedid/"> linkedin </a>.   |   .<a class="fg-magenta"> +33787131177 </a> 
+            <div style="position: relative; width: 100%; height: 0; padding-top: 141.4286%;
+            padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+            border-radius: 8px; will-change: transform;">
+             <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+               src="https://www.canva.com/design/DAGjZtZkVJQ/bK6-fuh2z5qNxwfODe9ybw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+             </iframe>
+           </div>
+           <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGjZtZkVJQ&#x2F;bK6-fuh2z5qNxwfODe9ybw&#x2F;view?utm_content=DAGjZtZkVJQ&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">CV</a> by Julien Boudjedid
+              
+          
+        </div>
+        <div class="sidebar">
+            __________
+            \"-_|``\\/
+            .\-_|``\/
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            .\-_|``\/
+            "-_ |``\\
+            "-_ |``\\
+            555555555
+        </div>
+    </div>
+    <div class="footer">
+        I_(-"_'(-"_(-"_('-"_(-"_(-"_-"_-'')'("'-_")"'"-"')"_-)")')"_-_)""I
 </body>
 </html>
